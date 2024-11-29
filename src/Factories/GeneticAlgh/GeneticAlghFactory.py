@@ -20,7 +20,7 @@ class GeneticAlghFactoryClass:
             for j in range(i + 1, self.n):
                 if board[i] == board[j] or abs(board[i] - board[j]) == abs(i - j):
                     conflicts += 1
-        return -conflicts  # Lower conflicts = higher fitness
+        return -conflicts 
 
     def selection(self):
         def tournament():
@@ -67,7 +67,7 @@ class GeneticAlghFactoryClass:
                     self.best_solution = board
                     return Decimal(1)
 
-            if generation % 100 == 0:  # Introduce diversity every 100 generations
+            if generation % 100 == 0:  
                 self.introduce_diversity()
 
             self.evolve(generation)
